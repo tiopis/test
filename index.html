@@ -1,0 +1,128 @@
+<html>
+<head>
+	<title>TEST - Menu</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<style type="text/css">
+	*{margin:0;padding:0;}
+	.wrap{
+		width:690px;
+		background:#050402;
+		padding: 15px 35px;height:100%;
+		margin:200px auto;
+	}
+	body{
+		color:#fff;font-family:Arial, sans-serif;
+		background:linear-gradient(to bottom, rgb(28, 7, 6) 0%, rgb(2, 1, 0) 100%) repeat scroll 0% 0% transparent;
+		height:100%
+	}
+	.bl_form{width:260px;line-height:130%}
+	.boxlist_h{font-size: 14px;text-transform: uppercase;color: rgb(227, 193, 115);}
+	.boxlist_select{display:block;color:#fff;font-size: 13px;}
+	.boxlist_option{padding:5px 7px;border-bottom:2px solid #F2D07C;position:relative;}
+	.boxlist_edit{display:none;
+		position:absolute;
+		right:3px;top:5px;
+		color:#E3C173;
+		cursor:pointer;
+		font-size:12px;}
+		
+	.boxlist_top{overflow:hidden;}
+	.boxlist_option:first-child .boxlist_variants{top:0px;}
+	.boxlist_variants{position:absolute;left:260px;top:-2px;	
+		width: 360px;
+		padding:15px 20px;
+		background:#F2D07C;
+		color:#050402;
+		display:none;
+		}
+	.boxlist_this .boxlist_variants{display:block;}
+	.boxlist_variants ul{list-style:none;}
+	.boxlist_variants ul li{padding:5px 0;border-bottom:1px solid #E0C179;cursor:pointer;color:#7C6C4A}
+	.boxlist_variants ul li:hover{background:#DDB966;}
+	.boxlist_this{background:#F2D07C;}
+	.boxlist_this .boxlist_h{color:#050402;}
+	.boxlist_this .boxlist_select{color:#7C6C4A;}
+	.boxlist_this .boxlist_edit{display:none;}
+	.boxlist_next{float:right;background: linear-gradient(to bottom, rgb(75, 35, 26) 0%, rgb(234, 192, 93) 49%, rgb(234, 192, 93) 50%, rgb(75, 35, 26) 100%) repeat scroll 0% 0% transparent;
+		padding: 0px 12px;
+		height: 28px;
+		line-height: 28px;
+		border-radius: 90px;
+		color: rgb(0, 0, 0);
+		border: 0px none;
+		text-shadow: 1px 1px 0px rgb(242, 213, 129);
+		cursor: pointer;
+		margin-top:10px;
+		}
+	.ow_hiddden{overflow:hidden;}
+	.check_btn{background:url('check_btn.png') no-repeat;float: left;width: 25px;height: 25px;margin: -3px 5px 0;}
+	
+	.boxlist_radio .ch_true {color:#050402}
+	.boxlist_radio .ch_true .check_btn{background-position:0 -26px}	
+	.boxlist_radio  .check_btn{background-position:0 0}
+	.boxlist_checkbox  .check_btn{background-position:0 -52px}
+	.boxlist_checkbox .ch_true .check_btn{background-position:0 -78px}
+	.bl_error{float:left;color:#5D0000;margin-top:10px;}
+	#bl_tocart{display:none;}
+	</style>
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="boxlist.js"></script>
+</head>
+<body><div style="width: 1005px;">
+	<div class="wrap">
+		<div class="bl_form">
+		<div id="js_boxlist" class="boxlist">
+			<div class="boxlist_option boxlist_this">				
+				<span class="boxlist_h">Основа:</span><span class="boxlist_edit">Изменить</span>
+				<span class="boxlist_select">Еще не выбрано</span>
+				<div class="boxlist_variants">
+					<ul id="js_boxlist_main" class="boxlist_radio">
+						<li class="ch_true bl_radio"><span class="check_btn"></span>Лапша стеклянная без овощей (195г)</li>
+						<li class="bl_radio"><span class="check_btn"></span>Лапша стеклянная без овощей (195г)</li>
+						<li class="bl_radio"><span class="check_btn"></span>Лапша стеклянная без овощей (195г)</li>
+						<li class="bl_radio"><span class="check_btn"></span>Лапша стеклянная без овощей (195г)</li>
+					</ul>
+					<div class="ow_hiddden"><div class="bl_error"></div><div class="boxlist_next" onclick="bl_next();">Далее</div></div>
+				</div>
+			</div>
+			<div class="boxlist_option">
+				<span class="boxlist_h">Наполнитель:</span><span class="boxlist_edit">Изменить</span>
+				<span class="boxlist_select">Еще не выбрано</span>
+				<div class="boxlist_variants">
+					<ul id="js_boxlist_ext" class="boxlist_radio" >
+						<li class="bl_radio"><span class="check_btn"></span>Морской коктейль (50г)</li>
+						<li class="bl_radio"><span class="check_btn"></span>Морской коктейль (50г)</li>
+						<li class="bl_radio" ><span class="check_btn"></span>Морской коктейль (50г)</li>
+						<li class="bl_radio"><span class="check_btn"></span>Морской коктейль (50г)</li>
+					</ul>
+					<div class="ow_hiddden"><div class="bl_error"></div><div class="boxlist_next" onclick="bl_next();">Далее</div></div>
+				</div>
+			</div >
+			<div class="boxlist_option">
+				<span class="boxlist_h">Соус:</span><span class="boxlist_edit">Изменить</span>
+				<span class="boxlist_select">Еще не выбрано</span>
+				<div class="boxlist_variants">
+					<ul id="js_boxlist_sauce" class="boxlist_radio">
+						<li class="bl_radio"><span class="check_btn"></span>Карри (75г)</li>
+					</ul>
+					<div class="ow_hiddden"><div class="bl_error"></div><div class="boxlist_next" onclick="bl_next();">Далее</div></div>
+				</div>
+			</div >
+			<div class="boxlist_option">
+				<span class="boxlist_h">Добавка:</span><span class="boxlist_edit">Изменить</span>
+				<span class="boxlist_select">Еще не выбрано</span>
+				<div class="boxlist_variants">
+					<ul id="js_boxlist_add" class="boxlist_radio">
+						<li class="bl_radio"><span class="check_btn"></span>Ананас консервированный (30г)</li>
+						<li class="ch_true bl_radio"><span class="check_btn"></span>Ананас консервированный (30г)</li>
+					</ul>
+					<div class="ow_hiddden"><div class="bl_error"></div><div class="boxlist_next" onclick="bl_next();">Далее</div></div>
+				</div>
+			</div>			
+		</div>
+		<div id="bl_tocart"><div style="float:right;margin:10px 5px 0 0;">В корзину</div></div>
+		</div>
+	
+	</div>
+</div></body>
+</html>
